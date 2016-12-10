@@ -27,3 +27,7 @@
 *.exe
 *.out
 *.app
+amb_demo
+
+# Song directory
+songs
