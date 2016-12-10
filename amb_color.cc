@@ -94,13 +94,13 @@ void ColorSensor::ThreadColorSensor() {
       color_sensor.readRGB(&red, &green, &blue);
 
       Color color = Color::kNone;
-      if (red > 100 && green > 100)
+      if (red > 200 && green > 100 && blue < 100)
         color = Color::kYellow;
-      else if (red > 200)
+      else if (red > 200 && green < 100 && blue < 100)
         color = Color::kRed;
-      else if (green > 100)
+      else if (green > 100 && blue < 100)
         color = Color::kGreen;
-      else if (blue > 80)
+      else if (blue > 100 && red < 100)
         color = Color::kBlue;
       color_handler_(color);
 
